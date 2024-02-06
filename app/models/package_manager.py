@@ -5,7 +5,6 @@ from app.models.package import Package
 
 
 class PackageManager(BaseModel):
-    id: int
     package_id: Package.id
     elf_id: Elf.id
     package_status: Status

@@ -1,28 +1,28 @@
-def individual_serial(elf) -> dict:
+def individual_serial_elf(elf) -> dict:
     return {
-        "id": elf.id,
-        "name": elf.elf_name,
-        "is_on_holidays": elf.is_on_holidays
+        "id": str(elf["_id"]),
+        "name": elf["elf_name"],
+        "is_on_holidays": elf["is_on_holidays"]
     }
 
 
-def list_serial(elves) -> list:
-    return [individual_serial(elf) for elf in elves]
+def list_serial_elf(elves) -> list:
+    return [individual_serial_elf(elf) for elf in elves]
 
 
-def individual_serial(package) -> dict:
+def individual_serial_package(package) -> dict:
     return {
-        "id": package.id,
-        "name": package.package_name,
-        "description": package.package_description,
+        "id": str(package["_id"]),
+        "name": package["package_name"],
+        "description": package["package_description"],
     }
 
 
-def list_serial(packages) -> list:
-    return [individual_serial(package) for package in packages]
+def list_serial_package(packages) -> list:
+    return [individual_serial_package(package) for package in packages]
 
 
-def individual_serial(package_manager) -> dict:
+def individual_serial_pm(package_manager) -> dict:
     return {
         "id": package_manager.id,
         "package_id": package_manager.package_id,
@@ -31,5 +31,5 @@ def individual_serial(package_manager) -> dict:
     }
 
 
-def list_serial(packages) -> list:
-    return [individual_serial(package) for package in packages]
+def list_serial_pm(packages) -> list:
+    return [individual_serial_pm(package) for package in packages]

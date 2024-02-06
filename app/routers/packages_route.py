@@ -1,14 +1,14 @@
 from fastapi import APIRouter
 from app.models.package import Package
 from app.config.database import collection_name
-from app.schema.schemas import list_serial
+from app.schema.schemas import list_serial_package
 from bson import ObjectId
 
 router = APIRouter()
 
 @router.get("/")
 async def get_all_packages():
-    packages = list_serial(collection_name.find())
+    packages = list_serial_package(collection_name.find())
     return packages
 
 @router.post("/")
