@@ -17,3 +17,14 @@ def individual_serial(package) -> dict:
 
 def list_serial(packages) -> list:
     return [individual_serial(package) for package in packages]
+
+def individual_serial(package_manager) -> dict:
+    return {
+        "id": package_manager.id,
+        "package_id": package_manager.package_id,
+        "elf_id": package_manager.elf_id,
+        "status": package_manager.package_status,
+    }
+
+def list_serial(packages) -> list:
+    return [individual_serial(package) for package in packages]
