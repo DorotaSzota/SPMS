@@ -1,12 +1,9 @@
 from fastapi import FastAPI
+from app.routers import elf_route
 
 app = FastAPI()
 
-from pymongo.mongo_client import MongoClient
-uri = "mongodb+srv://admin:maslo1234@cluster0.5nrw8lo.mongodb.net/?retryWrites=true&w=majority"
-client = MongoClient(uri)
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You're good to go!")
-except Exception as e:
-    print(e)
+app.include_router(elf_route.router)
+
+async def root():
+    return {"message": "Alive and kicking!"}
