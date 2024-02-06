@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.models import elf
+from app.models.elf import Elf
 from app.config.database import collection_name
 from app.schema import schemas
 from bson import ObjectId
@@ -13,5 +13,5 @@ async def get_all_elves():
     return schemas.list_serial(elves)
 
 @router.post("/")
-async def add_elf(elf: elf.Elf):
+async def add_elf(elf: Elf):
     collection_name.insert_one(dict(elf))
