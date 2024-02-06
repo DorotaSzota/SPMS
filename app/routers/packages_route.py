@@ -13,7 +13,6 @@ async def get_all_packages():
 
 @router.post("/")
 async def create_package(package: Package):
-    package.id = str(ObjectId())
     collection_name.insert_one(dict(package))
 
 @router.put("/{id}")
