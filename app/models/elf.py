@@ -2,8 +2,5 @@ from pydantic import BaseModel
 
 class Elf(BaseModel):
     id: int
-    name: str
+    elf_name: str
     is_on_holidays: bool
-
-    class Config:
-        orm_mode = True
