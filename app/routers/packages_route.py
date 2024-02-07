@@ -14,9 +14,11 @@ async def get_all_packages():
 @router.put("/packages/updt/{id}")
 async def update_package(id: str, package: Package):
     collection_name.find_one_and_update({"_id": ObjectId(id)}, {"$set": dict(package)})
+
 @router.post("/packages/add")
 async def create_package(package: Package):
     collection_name.insert_one(dict(package))
+
 @router.delete("/packages/delete/{id}")
 async def delete_package(id: str):
     collection_name.find_one_and_delete({"_id": ObjectId(id)})
