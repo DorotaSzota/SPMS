@@ -15,5 +15,27 @@ Santa has asked you to create a system for managing packages. The system should 
 
 Make sure to maintain clarity and comprehensibility for potential users, including Santa, throughout the development process and documentation.
 
-Docker port: 8080
+## Dependencies
+All Python dependencies are in the requirements.txt file.
 
+## Prerequisites
+Before starting work on the project you must install all needed dependencies:
+    pip install -r requirements.txt
+
+# How to
+## How to run the app for the first time
+    uvicorn main:app 
+
+## How to run the app with hot reload
+    uvicorn app.main:app --reload
+
+## How to pull and run docker image
+    docker pull owcen/pyt15:latest
+    docker run -p 8000:8000 owcen/pyt15
+
+## How to build and run docker image
+    docker build -t pyt15 .
+    docker run -p 80:80 pyt15
+
+## Swagger UI 
+    127.0.0.1:8000/docs
