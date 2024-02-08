@@ -6,7 +6,7 @@ from app.config.database import collection_name
 
 router = APIRouter()
 
-@router.get("/ackage_manager/all")
+@router.get("/package_manager/all")
 async def get_package_managers():
     try:
         package_managers = list_pms(collection_name.find())

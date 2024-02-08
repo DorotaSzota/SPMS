@@ -1,7 +1,3 @@
-from bson import ObjectId
-from app.config.database import collection_name
-
-
 def individual_serial_elf(elf) -> dict:
     return {
         "id": str(elf["_id"]),
@@ -37,4 +33,3 @@ def individual_serial_pm(package_manager) -> dict:
 
 def list_pms(package_managers) -> list:
     return [individual_serial_pm(package_manager) for package_manager in package_managers]
-
